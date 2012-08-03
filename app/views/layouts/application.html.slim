@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title TwitterBootstrapFormBuilderDemo
+    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "/bootstrap/css/bootstrap"
+
+    = javascript_include_tag "application"
+    = javascript_include_tag "/bootstrap/js/bootstrap"
+    = csrf_meta_tags
+  body
+    = yield

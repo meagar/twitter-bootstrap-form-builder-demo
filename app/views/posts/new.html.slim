@@ -1,0 +1,11 @@
+
+h2 what
+= form_for @post do |f|
+  = f.text_field :name
+  = f.text_field :email, :help_block => "what"
+  = f.check_box :hide_email, :about => "Do not display my email in my post"
+  = f.text_field :topic
+  = f.text_area :body
+  = f.check_box :terms_of_service, :label => nil, :about => "I have read and agreed to the terms of service"
+
+  = f.submit "Create"
