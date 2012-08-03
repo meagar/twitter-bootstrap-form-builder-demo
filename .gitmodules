@@ -1,0 +1,3 @@
+[submodule "vendor/twitter-bootstrap-form-builder"]
+	path = vendor/twitter-bootstrap-form-builder
+	url = https://github.com/meagar/twitter-bootstrap-form-builder.git

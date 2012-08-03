@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :reload_form_builder
 
   def reload_form_builder
-    load 'app/helpers/form_builder.rb'
+    load 'vendor/twitter-bootstrap-form-builder/lib/twitter-bootstrap-form-builder/form_builder.rb'
+    load 'vendor/twitter-bootstrap-form-builder/lib/twitter-bootstrap-form-builder/helper.rb'
   end
 end
