@@ -1,4 +1,7 @@
 TwitterBootstrapFormBuilderDemo::Application.routes.draw do
+
+  get "/:page" => "pages#:page"
+
   resources :posts
 
   root :to => "posts#new"

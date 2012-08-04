@@ -5,12 +5,14 @@ gem 'rails', '3.2.6'
 gem 'dynamic_form'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'carrierwave', '<= 0.6.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'json'
 gem 'jquery-rails'
 gem 'redcarpet'
 gem 'slim'
 gem 'therubyracer'
+
+gem 'heroku'
 
 #gem 'twitter-bootstrap-form-builder', :path => "/Users/matthew.eagar/projects/twitter-bootstrap-form-builder"
 
