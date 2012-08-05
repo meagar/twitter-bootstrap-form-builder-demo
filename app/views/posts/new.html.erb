@@ -1,0 +1,13 @@
+
+<%= form_for @post do |f| %>
+  <%= f.text_field :email %>
+  <%= f.check_box :hide_email, :text => "Don't show my email address in my posts" %>
+  <%= f.text_area :body, :help_block => "Simple HTML tags are allowed", :rows => 3 %>
+  <%= f.check_box :terms_of_service, :label => nil, :text => "I have read and agreed to the terms of service" %>
+
+  <div class="form-actions">
+    <%= f.submit "Create", :primary => true %>
+    <a href="/" class="btn">Cancel</a>
+  </div>
+
+<% end %>

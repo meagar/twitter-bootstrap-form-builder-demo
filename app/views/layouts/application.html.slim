@@ -3,10 +3,19 @@ html
   head
     title TwitterBootstrapFormBuilderDemo
     = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "/google-code-prettify/src/prettify"
     = stylesheet_link_tag "/bootstrap/css/bootstrap"
+    = stylesheet_link_tag "/bootstrap/css/bootstrap-responsive"
 
     = javascript_include_tag "application"
     = javascript_include_tag "/bootstrap/js/bootstrap"
+    = javascript_include_tag "/google-code-prettify/src/prettify"
     = csrf_meta_tags
   body
-    = yield
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.navbar-btn
+          a.brand TwitterBootstrapFormBuilder
+    .container.main
+      = yield

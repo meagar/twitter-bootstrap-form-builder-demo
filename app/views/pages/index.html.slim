@@ -1,0 +1,104 @@
+
+
+header.hero-unit
+  h1 Twitter Bootstrap FormBuilder
+  p Build fully marked up forms withinline error messages for Twitter Bootstrap with minimal effort.
+
+  a.github.btn.btn-primary.btn-large href="http://github.com/meagar/twitter-bootstrap-form-builder" View Project on GitHub.com
+  a.gem.btn.btn-large href="#TODO" View Gem on RubyGems.org
+
+
+= render "navbar"
+
+
+= section "Examples" do
+
+  p An simplistic "new post" form:
+
+  ul.nav.nav-tabs
+    li: a href="#erb1" ERB
+    li: a href="#output1" Rendered Output
+    li: a href="#markup1" Markup
+    li: a href="#outputerrors1" Output + Errors
+    li: a href="#markuperrors1" Markup + Errors
+
+  .example1.tab-content
+    #erb1.tab-pane
+      p Never manually render a <code>&lt;label&gt;</code> again!
+      = snippet "example.post-new.erb"
+    #output1.tab-pane
+      = File.open("app/views/snippets/example.post-new.html").read.html_safe
+    #markup1.tab-pane
+      p The labels and control group markup are generated automatically by a single <code*_field</code> call
+      = snippet "example.post-new.html"
+    #outputerrors1.tab-pane
+      p By default TBFB renders inline error messages and adds error classes to your markup
+      = File.open("app/views/snippets/example.post-new-errors.html").read.html_safe
+    #markuperrors1.tab-pane
+      p The labels and control group markup are generated automatically by a single <code*_field</code> call.
+      p Note that no attempt has been made to strip out Rails' <code>field_with_error</code> divs that wrap the individual form elements.
+      = snippet "example.post-new-errors.html"
+
+= section "Installation" do
+  h2 Get the Gem
+  p
+    | Add the Gem to your Gemfile:
+
+    pre.prettyprint.linenums.lang-none gem twitter-bootstrap-form-builder
+
+  p
+    | or install it manually:
+
+    pre.prettyprint.linenums.lang-none gem install twitter-bootstrap-form-builder
+
+  h2 Add the Helper
+  p The Gem includes a helper which overrides <code>form_for</code>, automatically setting the <code>:builder</code> option and adding Twitter Bootstrap's clases to your <code>&lt;form&gt;</code> tag.
+  p
+    | Include <code>MNE::TwitterBootstrapFormBuilder::Helper</code> in your <code>ApplicationHelper</code> module:
+
+    pre.prettyprint.linenums.lang-ruby
+      | # app/helpers/application_helper.rb
+
+        module ApplicationHelper
+          include MNE::TwitterBootstrapFormBuilder::Helper
+
+          # Your helpers here...
+
+            end
+
+= section "Usage" do
+
+  p Assuming you've added the helper, use <code>form_for</code> to begin rendering your form, excluding label tags.
+
+  = snippet "usage.1.input.erb"
+
+  p A couple of nice things have been done for us based on this one line:
+  ul
+    li Full markup for integration with Twitter Bootstrap
+    li Bonus class names for the field type (<code>text_field</code>) and attribute name (<code>topic</code>)
+    li Automatically generated <code>&lt;label&gt;</code> tags
+  = snippet "usage.1.output.html"
+
+  h2 Overriding the Label
+
+  p Use a string for a custom label:
+  = snippet "usage.custom-label-string.erb"
+  = snippet "usage.custom-label-string.html"
+
+  p Use an array to fully override the arguments to <code>label_tag</code>:
+  = snippet "usage.custom-label-opts.erb"
+  = snippet "usage.custom-label-opts.html"
+
+  h2 Suppressing TwitterBootstrapFormBuilder entirely
+
+  p If you have some crazy field that requires a ton of markup, use <code>:label => false</code>:
+  = snippet "usage.disable.erb"
+  p Exactly like calling regular <code>FormBuilder#text_field</code>:
+  = snippet "usage.disable.html"
+
+= section "Documentation" do
+
+  p
+    ' See the
+    a href="https://github.com/meagar/twitter-bootstrap-form-builder/blob/master/README.md" README
+    '  for documentation, examples and known issues.

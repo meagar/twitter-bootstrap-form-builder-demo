@@ -1,0 +1,57 @@
+<form accept-charset="UTF-8" action="/posts" class="form-horizontal " id="new_post" method="post">
+  <!-- Rails plumbing omitted -->
+
+  <div class=" text_field control-group name">
+    <label class="control-label" for="post_name">Name</label>
+    <div class="controls">
+      <input id="post_name" name="post[name]" size="30" type="text" />
+    </div>
+  </div>
+
+  <div class=" text_field control-group email">
+    <label class="control-label" for="post_email">Email</label>
+    <div class="controls">
+      <input id="post_email" name="post[email]" size="30" type="text" />
+    </div>
+  </div>
+
+  <div class="control-group hide_email">
+    <label class="control-label" for="post_hide_email">Hide email</label>
+    <div class="controls">
+      <label class="checkbox" for="post_hide_email">
+        <input name="post[hide_email]" type="hidden" value="0" />
+        <input id="post_hide_email" name="post[hide_email]" type="checkbox" value="1" />
+        Don't show my email address in my posts</label>
+    </div>
+  </div>
+
+  <div class=" text_field control-group topic">
+    <label class="control-label" for="post_topic">Topic</label>
+    <div class="controls">
+      <input id="post_topic" name="post[topic]" size="30" type="text" />
+    </div>
+  </div>
+
+  <div class=" text_area control-group body">
+    <label class="control-label" for="post_body">Body</label>
+    <div class="controls">
+      <textarea cols="40" id="post_body" name="post[body]" rows="3">
+      </textarea>
+      <p class="help-block">Simple HTML tags are allowed</p>
+    </div>
+  </div>
+
+  <div class="control-group terms_of_service">
+    <div class="controls">
+      <label class="checkbox" for="post_terms_of_service">
+        <input name="post[terms_of_service]" type="hidden" value="0" />
+        <input id="post_terms_of_service" name="post[terms_of_service]" type="checkbox" value="1" />I have read and agreed to the terms of service</label>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <input class=" btn btn-primary" name="commit" type="submit" value="Create" />
+    <a href="/" class="btn">Cancel</a>
+  </div>
+
+</form>
