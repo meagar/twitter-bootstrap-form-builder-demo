@@ -1,4 +1,5 @@
-This is a (as yet) super simple demo of the [TwitterBootstrapFormBuilder][1] gem which is currently pretty good at building horizontal forms.
-
+This is the Rails app used to generate the [github pages][2] for the [TwitterBootstrapFormBuilder][1] gem.
 
 [1]: https://github.com/meagar/twitter-bootstrap-form-builder
+[2]: http://meagar.github.com/twitter-bootstrap-form-builder
+
